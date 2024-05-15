@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { AulaComponent } from './aula/aula.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
-  template: `<h1>Probando</h1>`,
+  imports: [
+    AulaComponent,
+  ],
+  template: `<main>
+  <header class="brand-name">
+    <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+  </header>
+  <section class="content">
+    <app-aula></app-aula>
+  </section>
+</main>`,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
