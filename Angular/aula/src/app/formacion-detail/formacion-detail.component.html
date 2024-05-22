@@ -1,0 +1,13 @@
+<div *ngIf="formacion">
+
+  <h2>{{formacion.nombre | uppercase}}</h2>
+  <div><span>id: </span>{{formacion.id}}</div>
+  <div>
+    <label for="formacion-nombre">Nombre: </label>
+    <input id="formacion-nombre" [(ngModel)]="formacion.nombre" placeholder="nombre">
+  </div>
+  <div><span>Precio: </span>{{formacion.precio}}</div>
+  <div><span>Dual: </span>{{formacion.dual}}</div>
+  <div><span>Centro: </span>{{formacion.centro}}</div>
+
+</div>

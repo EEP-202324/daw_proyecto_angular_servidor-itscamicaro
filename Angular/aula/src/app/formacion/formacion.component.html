@@ -7,14 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedFormacion">
-  <h2>{{selectedFormacion.nombre | uppercase}} Details</h2>
-  <div>id: {{selectedFormacion.id}}</div>
-  <div>
-    <label for="formacion-nombre">Formación: </label>
-    <input id="formacion-nombre" [(ngModel)]="selectedFormacion.nombre" placeholder="name">
-  </div>
-  <div>Precio: {{selectedFormacion.precio}}</div>
-  <div>Dual: {{selectedFormacion.dual}}</div>
-  <div>Centro: {{selectedFormacion.centro}}</div>
-</div>
+<app-formacion-detail [formacion]="selectedFormacion"></app-formacion-detail>
