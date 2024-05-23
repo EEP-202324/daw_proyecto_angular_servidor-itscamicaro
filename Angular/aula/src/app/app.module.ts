@@ -1,24 +1,24 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormacionComponent } from './formacion/formacion.component';
-import { FormsModule } from '@angular/forms';
-import { FormacionDetailComponent } from './formacion-detail/formacion-detail.component'; // <-- NgModel lives here
+import { FormacionDetailComponent } from './formacion-detail/formacion-detail.component';
+import { MessagesComponent } from './messages/messages.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
     FormacionComponent,
-    FormacionDetailComponent
+    FormacionDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [
-    provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })
