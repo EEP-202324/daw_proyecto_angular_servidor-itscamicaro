@@ -1,10 +1,8 @@
-<h2>Nuestros grados superiores</h2>
-<ul class="heroes">
+<h2>Formaciones📚</h2>
+<ul class="formacion">
   <li *ngFor="let formacion of formaciones">
-    <button [class.selected]="formacion === selectedFormacion" type="button" (click)="onSelect(formacion)">
-      <span class="name">{{formacion.nombre}}</span>
-    </button>
+    <a routerLink="/detail/{{formacion.id}}">
+      <span class="badge">{{formacion.id}}</span> {{formacion.nombre}}
+    </a>
   </li>
 </ul>
-
-<app-formacion-detail [formacion]="selectedFormacion"></app-formacion-detail>

@@ -1,16 +1,16 @@
 /* HeroesComponent's private CSS styles */
-.heroes {
+.formacion {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 30em;
 }
 
-.heroes li {
+.formacion li {
   display: flex;
 }
 
-.heroes button {
+.formacion button {
   flex: 1;
   cursor: pointer;
   position: relative;
@@ -24,33 +24,33 @@
   height: 1.8em;
 }
 
-.heroes button:hover {
+.formacion button:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
   left: .1em;
 }
 
-.heroes button:active {
+.formacion button:active {
   background-color: #525252;
   color: #fafafa;
 }
 
-.heroes button.selected {
+.formacion button.selected {
   background-color: black;
   color: white;
 }
 
-.heroes button.selected:hover {
+.formacion button.selected:hover {
   background-color: #505050;
   color: white;
 }
 
-.heroes button.selected:active {
+.formacion button.selected:active {
   background-color: black;
   color: white;
 }
 
-.heroes .badge {
+.formacion .badge {
   display: inline-block;
   font-size: small;
   color: white;
@@ -61,7 +61,7 @@
   border-radius: 4px 0 0 4px;
 }
 
-.heroes .name {
+.formacion .name {
   align-self: center;
   margin-left: 1em;
 }

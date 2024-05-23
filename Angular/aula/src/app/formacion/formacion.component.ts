@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Formacion } from '../formacion';
 import { FormacionService } from '../formacion.service';
-import { MessageService } from '../message.service';
 
 
 @Component({
@@ -12,23 +11,18 @@ import { MessageService } from '../message.service';
 })
 export class FormacionComponent implements OnInit {
 
-  selectedFormacion?: Formacion;
 
   formaciones: Formacion[] = [];
 
-  constructor(private formacionService: FormacionService, private messageService: MessageService) {}
+  constructor(private formacionService: FormacionService) {}
 
   ngOnInit(): void {
     this.getFormaciones();
   }
 
-onSelect(formacion: Formacion): void {
-  this.selectedFormacion = formacion;
-  this.messageService.add(`FormacionesComponent: Selected formacion id=${formacion.id}`);
-}
 
 getFormaciones(): void {
-  this.formacionService.getFormacion()
+  this.formacionService.getFormaciones()
       .subscribe(formaciones => this.formaciones = formaciones);
 
 }

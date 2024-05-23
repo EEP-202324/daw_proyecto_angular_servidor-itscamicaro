@@ -1,13 +1,18 @@
-<div *ngIf="formacion">
+<div *ngIf="formacion" class="name">
 
-  <h2>{{formacion.nombre | uppercase}}</h2>
+
+  <h2>Información sobre {{formacion.nombre}}</h2>
   <div><span>id: </span>{{formacion.id}}</div>
   <div>
-    <label for="formacion-nombre">Nombre: </label>
-    <input id="formacion-nombre" [(ngModel)]="formacion.nombre" placeholder="nombre">
+    <label for="hero-name">Nombre: </label>
+    <input id="hero-name" [(ngModel)]="formacion.nombre" placeholder="name">
   </div>
+
   <div><span>Precio: </span>{{formacion.precio}}</div>
   <div><span>Dual: </span>{{formacion.dual}}</div>
   <div><span>Centro: </span>{{formacion.centro}}</div>
+
+
+  <button type="button" (click)="goBack()">Ir atrás</button>
 
 </div>
