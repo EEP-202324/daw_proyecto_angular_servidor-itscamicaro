@@ -24,14 +24,20 @@ export class FormacionDetailComponent implements OnInit {
   }
 
   getFormacion(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.formacionService.getFormacion(id)
       .subscribe(formacion => this.formacion = formacion);
   }
 
-
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.formacion) {
+      this.formacionService.updateFormacion(this.formacion)
+        .subscribe(() => this.goBack());
+    }
   }
 
 }

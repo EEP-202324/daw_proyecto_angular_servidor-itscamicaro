@@ -1,7 +1,4 @@
-.name{
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
+/* HeroDetailComponent's private CSS styles */
 label {
   color: #435960;
   font-weight: bold;
@@ -9,11 +6,11 @@ label {
 input {
   font-size: 1em;
   padding: .5rem;
-  width: 25em;
 }
 button {
   margin-top: 20px;
-  background-color: #b1d3ec;
+  margin-right: .5rem;
+  background-color: #eee;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
@@ -26,4 +23,3 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
-

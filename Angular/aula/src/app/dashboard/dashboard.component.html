@@ -1,6 +1,9 @@
 <h2>Top formaciones 📚</h2>
 <div class="heroes-menu">
-  <a *ngFor="let formacion of formaciones">
+  <a *ngFor="let formacion of formaciones"
+    routerLink="/detail/{{formacion.id}}">
     {{formacion.nombre}}
   </a>
 </div>
+
+<app-formacion-search></app-formacion-search>

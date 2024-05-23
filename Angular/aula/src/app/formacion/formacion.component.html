@@ -1,8 +1,21 @@
 <h2>Todas las formaciones📚</h2>
+
+<div>
+  <label for="new-formacion">Nombre de la formación: </label>
+  <input id="new-formacion" #formacionName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(formacionName.value); formacionName.value=''">
+    Añadir formación
+  </button>
+</div>
+
 <ul class="formacion">
   <li *ngFor="let formacion of formaciones">
     <a routerLink="/detail/{{formacion.id}}">
       <span class="badge">{{formacion.id}}</span> {{formacion.nombre}}
     </a>
+    <button type="button" class="delete" title="delete formacion"
+  (click)="delete(formacion)">x</button>
   </li>
 </ul>
