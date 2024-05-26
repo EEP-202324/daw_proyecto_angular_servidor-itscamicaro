@@ -26,8 +26,19 @@ class FormacionApplicationTests {
         Number id = documentContext.read("$.id");
         assertThat(id).isEqualTo(99);
         
-        Double amount = documentContext.read("$.amount");
-        assertThat(amount).isEqualTo(123.45);
+        String nombre = documentContext.read("$.nombre");
+        assertThat(nombre).isEqualTo("Administración y finanzas");
+        
+        String precio = documentContext.read("$.precio");
+        assertThat(precio).isEqualTo("1.500€");
+        
+        Boolean dual = documentContext.read("$.dual");
+        assertThat(dual).isTrue();
+        
+        String centro = documentContext.read("$.centro");
+        assertThat(centro).isEqualTo("Formación Azuqueca de Henares");
+        
+        
     }
     
     

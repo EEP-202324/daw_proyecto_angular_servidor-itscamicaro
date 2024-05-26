@@ -1,12 +1,16 @@
 package com.example.formacion;
 
 import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+@Entity
 public class Formacion {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	
 	private String nombre;
