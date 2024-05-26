@@ -1,2 +1,6 @@
 {  "id": 99,
-  "amount": 123.45}
+  "nombre": 'Administración y finanzas',
+  "precio": '1.500€',
+  "dual": true,
+  "centro": 'Formación Azuqueca de Henares'
+  }

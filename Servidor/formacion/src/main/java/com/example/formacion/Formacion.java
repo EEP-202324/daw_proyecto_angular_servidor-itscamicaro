@@ -1,6 +1,9 @@
 package com.example.formacion;
 
 import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 public class Formacion {
 	
@@ -64,6 +67,12 @@ public class Formacion {
 		this.precio = precio;
 		this.dual = dual;
 		this.centro = centro;
+	}
+
+	@Override
+	public String toString() {
+		return "Formacion [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", dual=" + dual + ", centro="
+				+ centro + "]";
 	}
 
 	@Override
