@@ -44,6 +44,24 @@ class FormacionController {
 	}
 	
 	
+	@PutMapping("/{requestedId}")
+    public ResponseEntity<Void> putEscuela(@PathVariable Long requestedId, @RequestBody Formacion formacionActualizada) {
+        Optional<Formacion> optional = formacionRepository.findById(requestedId);
+        if (optional.isPresent()) {
+            Formacion formacion = optional.get();
+            Formacion updateFormacion = new Formacion (
+                    formacion.getId(),
+                    formacionActualizada.getNombre(),
+                    formacionActualizada.getPrecio(),
+                    formacionActualizada.getCentro());
+        formacionRepository.save(updateFormacion);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+	
+	
 	@GetMapping
 	private ResponseEntity<List<Formacion>> findAll(Pageable pageable) {
 	    Page<Formacion> page = formacionRepository.findAll(

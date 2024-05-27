@@ -10,6 +10,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 
 import java.net.URI;
 
@@ -79,7 +81,7 @@ class FormacionApplicationTests {
 		JSONArray nombres = documentContext.read("$..nombre");
 		assertThat(nombres).containsExactlyInAnyOrder("Administración y finanzas", "Comercio internacional",
 				"Desarrollo de aplicaciones web", "Desarrollo de aplicaciones multiplataforma",
-				"Marketing y publicidad", "Higiene bucodental", "Nutrición y diétetica", "Integración social");
+				"Marketing y publicidad", "Higiene sanitaria", "Nutrición y diétetica", "Integración social");
 
 		JSONArray precios = documentContext.read("$..precio");
 		assertThat(precios).containsExactlyInAnyOrder("1.500€", "1.600€", "2.500€", "2.500€", "1.800€", "3.100€",
@@ -126,8 +128,40 @@ class FormacionApplicationTests {
 
 	    JSONArray nombres = documentContext.read("$..nombre");
 	    assertThat(nombres).containsExactly("Administración y finanzas", "Comercio internacional", "Desarrollo de aplicaciones multiplataforma",
-	    		"Desarrollo de aplicaciones web", "Higiene bucodental", "Integración social", "Marketing y publicidad", "Nutrición y diétetica" );
+	    		"Desarrollo de aplicaciones web", "Higiene sanitaria", "Integración social", "Marketing y publicidad", "Nutrición y diétetica" );
 	    
+	}
+	
+	@Test
+	@DirtiesContext
+	void shouldUpdateAnExistingFormacion() {
+	    Formacion formacionUpdate = new Formacion(6L, "Higiene sanitaria", "3.100€", "Formación Alcalá de Henares");
+	    HttpEntity<Formacion> request = new HttpEntity<>(formacionUpdate);
+	    ResponseEntity<Void> response = restTemplate
+	            .exchange("/formaciones/6", HttpMethod.PUT, request, Void.class);
+	    assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+	    ResponseEntity<String> getResponse = restTemplate
+	            .getForEntity("/formaciones/6", String.class);
+	    assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+	    DocumentContext documentContext = JsonPath.parse(getResponse.getBody());
+	    Number id = documentContext.read("$.id");
+	    String nombre = documentContext.read("$.nombre");
+	    String precio = documentContext.read("$.precio");
+	    String centro = documentContext.read("$.centro");
+	    assertThat(id).isEqualTo(6);
+	    assertThat(nombre).isEqualTo("Higiene sanitaria");
+	    assertThat(precio).isEqualTo("3.100€");
+	    assertThat(centro).isEqualTo("Formación Alcalá de Henares");
+	    
+	}
+	
+	@Test
+	void shouldNotUpdateAFormacionThatDoesNotExist() {
+	    Formacion unknownFormacion = new Formacion(null, "Educación infantil", null, null);
+	    HttpEntity<Formacion> request = new HttpEntity<>(unknownFormacion);
+	    ResponseEntity<Void> response = restTemplate
+	            .exchange("/formaciones/99999", HttpMethod.PUT, request, Void.class);
+	    assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	}
 
 	
