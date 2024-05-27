@@ -16,9 +16,7 @@ public class Formacion {
 	private String nombre;
 	
 	private String precio;
-	
-	private Boolean dual;
-	
+		
 	private String centro;
 	
 	public Formacion() {
@@ -48,13 +46,6 @@ public class Formacion {
 		this.precio = precio;
 	}
 
-	public Boolean getDual() {
-		return dual;
-	}
-
-	public void setDual(Boolean dual) {
-		this.dual = dual;
-	}
 
 	public String getCentro() {
 		return centro;
@@ -64,24 +55,23 @@ public class Formacion {
 		this.centro = centro;
 	}
 
-	public Formacion(Long id, String nombre, String precio, Boolean dual, String centro) {
+	public Formacion(Long id, String nombre, String precio, String centro) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
-		this.dual = dual;
 		this.centro = centro;
 	}
 
 	@Override
 	public String toString() {
-		return "Formacion [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", dual=" + dual + ", centro="
+		return "Formacion [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", centro="
 				+ centro + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(centro, dual, id, nombre, precio);
+		return Objects.hash(centro, id, nombre, precio);
 	}
 
 	@Override
@@ -93,7 +83,7 @@ public class Formacion {
 		if (getClass() != obj.getClass())
 			return false;
 		Formacion other = (Formacion) obj;
-		return Objects.equals(centro, other.centro) && Objects.equals(dual, other.dual) && Objects.equals(id, other.id)
+		return Objects.equals(centro, other.centro) && Objects.equals(id, other.id)
 				&& Objects.equals(nombre, other.nombre) && Objects.equals(precio, other.precio);
 	}
 	

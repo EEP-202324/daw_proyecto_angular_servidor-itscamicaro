@@ -1,0 +1,10 @@
+[
+  { "id": 99, "nombre": "Administración y finanzas", "precio": "1.500€", "centro": "Formación Azuqueca de Henares"  },
+  { "id": 2, "nombre": "Comercio internacional", "precio": "1.600€", "centro": "Formación Alcalá de Henares" },
+  { "id": 3, "nombre": "Desarrollo de aplicaciones web", "precio": "2.500€", "centro": "Formación Majadahonda" },
+  { "id": 4, "nombre": "Desarrollo de aplicaciones multiplataforma", "precio": "2.500€", "centro": "Formación Majadahonda" },
+  { "id": 5, "nombre": "Marketing y publicidad", "precio": "1.800€", "centro": "Formación Azuqueca de Henares" },
+  { "id": 6, "nombre": "Higiene bucodental", "precio": "3.100€", "centro": "Formación Alcalá de Henares" },
+  { "id": 7, "nombre": "Nutrición y diétetica", "precio": "2.300€", "centro": "Formación Alcalá de Henares" },
+  { "id": 8, "nombre": "Integración social", "precio": "800€", "centro": "Formación Majadahonda" }
+]
