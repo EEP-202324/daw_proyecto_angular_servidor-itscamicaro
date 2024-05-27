@@ -9,7 +9,7 @@ import { MessageService } from './message.service';
 
 @Injectable({ providedIn: 'root' })
 export class FormacionService {
-  private formacionesUrl = 'api/formaciones';
+  private formacionesUrl = 'http://localhost:8080/formaciones';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

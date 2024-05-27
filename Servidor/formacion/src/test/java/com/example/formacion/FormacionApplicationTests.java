@@ -163,6 +163,18 @@ class FormacionApplicationTests {
 	            .exchange("/formaciones/99999", HttpMethod.PUT, request, Void.class);
 	    assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 	}
+	
+	@Test
+	@DirtiesContext
+	void shouldDeleteAnExistingFormacion() {
+	    ResponseEntity<Void> response = restTemplate
+	            .exchange("/formaciones/8", HttpMethod.DELETE, null, Void.class);
+	    assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+	    ResponseEntity<String> getResponse = restTemplate
+	            .getForEntity("/formaciones/8", String.class);
+	    assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+	}
+	
 
 	
 
