@@ -5,18 +5,20 @@ label {
 }
 input {
   font-size: 1em;
-  padding: .5rem;
+  padding: 0.5rem;
+  width: 25%;
 }
 button {
   margin-top: 20px;
   margin-right: .5rem;
-  background-color: #eee;
+  background-color: #8cc6e5;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: rgb(78, 119, 133);
 }
 button:disabled {
   background-color: #eee;

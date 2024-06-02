@@ -4,6 +4,10 @@ h2 {
   text-align: center;
 }
 
+.search-component{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .heroes-menu {
   padding: 0;
   margin: auto;

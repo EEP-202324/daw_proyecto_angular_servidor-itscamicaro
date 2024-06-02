@@ -3,8 +3,6 @@
 <div>
   <label for="new-formacion">Nombre de la formación: </label>
   <input id="new-formacion" #formacionName />
-
-  <!-- (click) passes input value to add() and then clears the input -->
   <button type="button" class="add-button" (click)="add(formacionName.value); formacionName.value=''">
     Añadir formación
   </button>

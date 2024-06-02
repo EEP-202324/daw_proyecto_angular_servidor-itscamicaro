@@ -23,7 +23,7 @@ h2 {
 }
 
 a {
-  background-color: #3f525c;
+  background-color: #8cc6e5;
   border-radius: 2px;
   padding: 1rem;
   font-size: 1.2rem;
@@ -35,6 +35,7 @@ a {
   min-width: 70px;
   margin: .5rem auto;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 
   /* flexbox */
   order: 0;
@@ -50,5 +51,5 @@ a {
 }
 
 a:hover {
-  background-color: black;
+  background-color: rgb(78, 119, 133);
 }
